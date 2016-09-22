@@ -2,7 +2,10 @@
 
 namespace SedpMis\ModelCrud;
 
-abstract class BaseModelCrudController extends \ApiController
+use Illuminate\Routing\Controller;
+use Illuminate\Http\Response;
+
+abstract class BaseModelCrudController extends Controller
 {
     protected $model;
 
@@ -39,7 +42,7 @@ abstract class BaseModelCrudController extends \ApiController
 
         $model = $this->model->create($data);
 
-        return $this->respondCreated($model);
+        return new Response($model, Response::HTTP_CREATED);
     }
 
     /**
@@ -60,7 +63,7 @@ abstract class BaseModelCrudController extends \ApiController
         $model->fill($data);
         $model->save();
 
-        return $this->respondNoContent();
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -76,6 +79,6 @@ abstract class BaseModelCrudController extends \ApiController
 
         $model->delete();
 
-        return $this->respondNoContent();
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 }

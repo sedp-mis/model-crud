@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "sedp-mis/lib": "1.*"
+        "laravel/framework": ">=4.2.11"
     },
     "autoload": {
         "psr-4": {
