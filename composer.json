@@ -1,0 +1,25 @@
+{
+    "name": "sedp-mis/model-crud",
+    "description": "Laravel model crud library",
+    "keywords": ["laravel", "model", "crud"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arjon Jason Castro",
+            "email": "ajcastro29@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "sedp-mis/lib": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SedpMis\\ModelCrud\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}
